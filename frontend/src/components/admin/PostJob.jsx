@@ -63,7 +63,7 @@ const PostJob = () => {
       // 2. Make the API call with the token in the headers
       const res = await axios.post(`${JOB_API_END_POINT}/post`, input, {
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
           // Authorization: `Bearer ${token}`
         },
         withCredentials: true,
