@@ -52,19 +52,18 @@ const PostJob = () => {
     try {
       setLoading(true);
       // 1. Get the token from local storage
-        // 1. Get the token from local storage
-        // const token = localStorage.getItem("token");
-        // if (!token) {
-        //     toast.error("You are not logged in.");
-        //     setLoading(false);
-        //     return;
-        // }
+      const token = localStorage.getItem("token");
+      if (!token) {
+        toast.error("You are not logged in.");
+        setLoading(false);
+        return;
+      }
 
       // 2. Make the API call with the token in the headers
       const res = await axios.post(`${JOB_API_END_POINT}/post`, input, {
         headers: {
-          "Content-Type": "application/json"
-          // Authorization: `Bearer ${token}`
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`
         },
         withCredentials: true,
       });
