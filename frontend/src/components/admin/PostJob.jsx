@@ -63,7 +63,7 @@ const PostJob = () => {
       const res = await axios.post(`${JOB_API_END_POINT}/post`, input, {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${token}`
         },
         withCredentials: true,
       });
