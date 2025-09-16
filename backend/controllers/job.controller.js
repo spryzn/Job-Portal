@@ -1,6 +1,6 @@
 import { Job } from "../models/job.model.js";
 
-// admin post Jobs Here
+// admin post krega job
 export const postJob = async (req, res) => {
     try {
         const { title, description, requirements, salary, location, jobType, experience, position, companyId } = req.body;
@@ -8,7 +8,7 @@ export const postJob = async (req, res) => {
 
         if (!title || !description || !requirements || !salary || !location || !jobType || !experience || !position || !companyId) {
             return res.status(400).json({
-                message: "Something is missing.",
+                message: "Somethin is missing.",
                 success: false
             })
         };
@@ -33,7 +33,7 @@ export const postJob = async (req, res) => {
         console.log(error);
     }
 }
-// For student 
+// student k liye
 export const getAllJobs = async (req, res) => {
     try {
         const keyword = req.query.keyword || "";
